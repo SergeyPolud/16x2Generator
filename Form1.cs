@@ -39,7 +39,7 @@ namespace _16x2Generator
         }
         private void Button_Click(object sender, EventArgs e)
         {
-            var sorted = matrix.OrderBy(x => Convert.ToInt32(x.Name.Substring(6)));
+            var sorted = matrix.OrderBy(x => Convert.ToInt32(x.Name.Substring(6))); //
             List<Control> newMatrix = new List<Control>(sorted);
             var button = sender as Button;
             string name = "button";
