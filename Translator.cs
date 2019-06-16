@@ -26,7 +26,7 @@ namespace _16x2Generator
         {
             int j = 0;
 
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i <40; i++)
             {
                 if (newMatrix[i].BackColor == Color.Red)
                 {

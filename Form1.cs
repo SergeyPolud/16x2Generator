@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _16x2Generator
@@ -40,7 +37,8 @@ namespace _16x2Generator
         
         private void Button_Click(object sender, EventArgs e)
         {
-            var sorted = matrix.OrderBy(x => Convert.ToInt32(x.Name.Substring(6))); //
+
+            var sorted = matrix.OrderBy(x => Convert.ToInt32(x.Name.Substring(6)));
             newMatrix.AddRange(sorted);
             var button = sender as Button;
             string name = "button";
@@ -48,27 +46,58 @@ namespace _16x2Generator
             {
                if(button.Name == (name + i))
                 {
-                    newMatrix[i-1].BackColor = Color.Red;
+                    if (newMatrix[i - 1].BackColor != Color.Red)
+                    {
+                        newMatrix[i - 1].BackColor = Color.Red;
+                    }
+                    else
+                    {
+                        newMatrix[i - 1].BackColor = Color.White;
+                    }
                 }
             }
         }
        
         private void Form1_Load(object sender, EventArgs e)
         {
-           
-
-
+            foreach (Button button in panel1.Controls)
+            {
+                button.BackColor = Color.White;
+            }
         }
-       
+
         private void Button41_Click(object sender, EventArgs e)
         {
+            string defaultName = "user_char";
+            string SymbolName = textBox1.Text;
+            richTextBox1.Clear();
+            if (SymbolName == "")
+            {
+                SymbolName = defaultName;
+            }
+            richTextBox1.AppendText($"uint8_t {SymbolName}[8];\n");
+           
             translator.SetFlags(newMatrix, flagArray);
             translator.SetBits(flagArray);
 
             for(int i=0;i<8;i++)
             {
-               richTextBox1.AppendText(translator.bitArray[i]);
-                richTextBox1.AppendText("\n");
+               richTextBox1.AppendText($"{SymbolName}[{i}] = 0b{translator.bitArray[i]};");
+               richTextBox1.AppendText("\n");
+            }
+            richTextBox1.Invalidate();
+            for(int i=0;i<8;i++)
+            {
+                translator.bitArray[i] = "";
+            }
+            panel1.Invalidate(true);
+        }
+
+        private void Clear_Btn_Click(object sender, EventArgs e)
+        {
+            foreach (Button button in panel1.Controls)
+            {
+                button.BackColor = Color.White;
             }
         }
     }

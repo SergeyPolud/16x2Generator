@@ -71,6 +71,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button41 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Clear_Btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,9 +119,9 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 274);
+            this.panel1.Size = new System.Drawing.Size(397, 250);
             this.panel1.TabIndex = 0;
             // 
             // button40
@@ -385,7 +388,7 @@
             // button11
             // 
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(143, 34);
+            this.button11.Location = new System.Drawing.Point(3, 65);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(29, 25);
             this.button11.TabIndex = 10;
@@ -394,7 +397,7 @@
             // button10
             // 
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(3, 65);
+            this.button10.Location = new System.Drawing.Point(143, 34);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(29, 25);
             this.button10.TabIndex = 9;
@@ -483,35 +486,65 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(288, 15);
+            this.richTextBox1.Location = new System.Drawing.Point(224, 36);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(184, 271);
+            this.richTextBox1.Size = new System.Drawing.Size(185, 250);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
             // button41
             // 
-            this.button41.Location = new System.Drawing.Point(120, 324);
+            this.button41.Location = new System.Drawing.Point(12, 303);
             this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(75, 23);
+            this.button41.Size = new System.Drawing.Size(181, 90);
             this.button41.TabIndex = 2;
-            this.button41.Text = "Translate";
+            this.button41.Text = "Convert to bit array";
             this.button41.UseVisualStyleBackColor = true;
             this.button41.Click += new System.EventHandler(this.Button41_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(224, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(185, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Specify Symbol Name";
+            // 
+            // Clear_Btn
+            // 
+            this.Clear_Btn.Location = new System.Drawing.Point(261, 327);
+            this.Clear_Btn.Name = "Clear_Btn";
+            this.Clear_Btn.Size = new System.Drawing.Size(116, 66);
+            this.Clear_Btn.TabIndex = 5;
+            this.Clear_Btn.Text = "Clear";
+            this.Clear_Btn.UseVisualStyleBackColor = true;
+            this.Clear_Btn.Click += new System.EventHandler(this.Clear_Btn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(449, 416);
+            this.Controls.Add(this.Clear_Btn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button41);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "16x2BitArrayGenerator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -560,6 +593,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Clear_Btn;
     }
 }
 
